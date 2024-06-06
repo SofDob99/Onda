@@ -1,11 +1,8 @@
 <template>
-  <div>
-    <NavBar />
-    <NuxtPage />
-    <music />
-
-    
-  </div>
+    <div>
+        <Nuxt />
+        <music />
+    </div>
 </template>
 
 <script>
@@ -17,3 +14,7 @@ export default {
     }
 }
 </script>
+
+<style>
+/* Estilos globales */
+</style>
