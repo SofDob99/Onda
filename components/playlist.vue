@@ -6,7 +6,7 @@
         </div>
         <div class="episode-list" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
             <section v-for="(episode, index) in episodes" :key="index" data-aos="fade-up">
-                <nuxt-link :to="`episode/${index + 1}`" class="episode-link">
+                <nuxt-link :to="`/episode/${index + 1}`" class="episode-link">
                     <h3 class="text-2xl">{{ episode }}</h3>
                 </nuxt-link>
                 <div class="icones">
@@ -48,8 +48,6 @@ const addToLikes = (episode) => {
         alert(`${episode} ya está en tus episodios favoritos`);
     }
 };
-
-
 </script>
 
 <style lang="postcss">

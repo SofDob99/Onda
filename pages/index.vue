@@ -6,6 +6,7 @@ import CardPeque from '~/components/cardPeque.vue';
     <div>   
         <CardGrande class="carousell" />
         <CardPeque class="galeria" />
+
         
 
     

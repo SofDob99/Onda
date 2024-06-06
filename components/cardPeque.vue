@@ -1,6 +1,6 @@
 <template>
     <div class="tit">
-        <h1 class="text-3xl">Hola</h1>
+        <h1 class="text-3xl">Más de uno</h1>
     </div>
     <nuxt-link to="/masqueuno">
         <div class="gallery" data-aos="fade-right">
