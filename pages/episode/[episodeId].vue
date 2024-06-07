@@ -1,37 +1,48 @@
 <template>
-    <div v-if="episodeData">
-        <h3 class="text-2xl">{{ episodeData }}</h3>
-        <div>
-            <h1>Reproductor</h1>
-            <MusicPlayer :query="episodeData" />
-        </div>
+    <div>
+        <h1>{{ $route.params.id }}</h1>
+        <MusicPlayer :query="episodeQuery" :episodeName="episodeName" :author="author" :coverImage="coverImage" />
     </div>
 </template>
 
-<script setup>
-import { ref, onMounted } from 'vue';
-import { useRoute } from 'vue-router';
-import MusicPlayer from '@/components/MusicPlayer.vue';
+<script>
+import MusicPlayer from '~/components/MusicPlayer.vue';
 
-const route = useRoute();
-const episodeData = ref(null);
-
-const episodes = [
-    '1x1: Gasolina, coches de choque y la -Adele de feria-',
-    '1x2: Segundo episodio',
-    '1x3: Tercer episodio',
-    '1x4: Cuarto episodio',
-    '1x5: Quinto episodio',
-    '1x6: Sexto episodio',
-    '1x7: Séptimo episodio',
-    '1x8: Octavo episodio',
-    '1x9: Noveno episodio',
-    '1x10: Décimo episodio',
-];
-
-onMounted(() => {
-    const { episodeId } = route.params;
-    episodeData.value = episodes[episodeId - 1];
-});
+export default {
+    components: {
+        MusicPlayer
+    },
+    computed: {
+        episodeQuery() {
+            return `episode ${this.$route.params.id}`; // Ajusta esto según tu lógica de búsqueda
+        },
+        episodeName() {
+            return `Episode ${this.$route.params.id}: ${this.episodes[this.$route.params.id - 1]}`;
+        },
+        author() {
+            return 'Gema Ruiz'; // Ajusta esto según tu lógica
+        },
+        coverImage() {
+            return `https://picsum.photos/300?random=${this.$route.params.id}`; // Imagen aleatoria basada en el ID del episodio
+        },
+        episodes() {
+            return [
+                'Gasolina, coches de choque y la -Adele de feria-',
+                'Segundo episodio',
+                'Tercer episodio',
+                'Cuarto episodio',
+                'Quinto episodio',
+                'Sexto episodio',
+                'Séptimo episodio',
+                'Octavo episodio',
+                'Noveno episodio',
+                'Décimo episodio',
+            ];
+        }
+    }
+};
 </script>
 
+<style scoped>
+
+</style>
