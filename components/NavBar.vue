@@ -2,7 +2,7 @@
     <nav class="nav-1">
         <div><img class="logo" src="/logo.png" alt="img de cabecera"></div>
         <div class="btns" v-if="!isMobileMenuVisible">
-            <nuxt-link to="/pages"> <button class="circle_button">
+            <nuxt-link to="/"><button class="circle_button">
                     <Icon name="ic:baseline-home" color="white" size="2em"></Icon>
                 </button></nuxt-link>
             <nuxt-link to="/favs"> <button class="circle_button">
