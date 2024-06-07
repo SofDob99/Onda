@@ -17,7 +17,7 @@
                 <button class="oval-button">Siguiendo</button>
             </nuxt-link>
             <nuxt-link to="/users">
-                <img class="img-perfil" src="/users.jpeg" alt="">
+                <img class="img-perfil" src="/perfil.jpeg" alt="">
             </nuxt-link>
         </div>
         <button class="hamburger-button" @click="toggleMobileMenu" v-if="isMobile">
