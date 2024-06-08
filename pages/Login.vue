@@ -6,6 +6,11 @@
         <button @click="handleLogin" :disabled="isLoading">
             <i class="icon-login"></i> Login
         </button>
+        <NuxtLink to="/perfil">
+                <button class="circle_button">
+                    <Icon name="ic:sharp-person" color="white" size="2em"></Icon>
+                </button>
+            </NuxtLink>
     </div>
 </template>
 
@@ -60,8 +65,6 @@ const handleLogin = async () => {
     flex-direction: column;
     justify-content: space-evenly;
     width: 600px;
-    height: 51px;
-    border: 4px solid rgba(0, 0, 0, 0.00);
     gap: 1rem;
 }
 
@@ -70,16 +73,12 @@ button {
     height: 51px;
     flex-shrink: 0;
     border-radius: 43.5px;
-    border: 4px solid rgba(0, 0, 0, 0.00);
     background: #71b84e;
 }
 
 @media (max-width: 576px) {
     .login-container {
         width: 300px;
-    height: 51px;
-
     }
 }
-
 </style>
