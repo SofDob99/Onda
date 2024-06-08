@@ -1,16 +1,13 @@
 <template>
     <div class="music-player" v-if="currentTrack">
-        <audio ref="audio" :src="currentTrack?.preview_url || ''" @timeupdate="updateProgress" @ended="nextTrack"></audio>
-        <div class="info" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+        <audio ref="audio" :src="currentTrack?.preview_url || ''" @timeupdate="updateProgress"
+            @ended="nextTrack"></audio>
+        <div class="info" data-aos="flip-left">
             <img :src="coverImage" alt="Cover Image" class="cover-image" />
             <h1 class="text-4xl">{{ episodeName }}</h1>
             <h2 data-aos="flip-left">{{ author }}</h2>
+            <!--<h3 data-aos="flip-left">{{ currentTrack?.name || '' }}</h3>-->
             <p data-aos="flip-left">{{ currentTrack?.artists[0]?.name || '' }}</p>
-        </div>
-        <div class="icones">
-            <Icon name="ic:baseline-favorite-border" color="#72B84E" size="2em" @click="addToLikes(currentTrack)" />
-            <Icon name="ic:sharp-download-for-offline" color="#72B84E" size="2em" />
-            <Icon name="ic:outline-share" color="#72B84E" size="2em" />
         </div>
         <div class="rep">
             <div class="progress-bar" @click="seek($event)">
@@ -28,7 +25,6 @@
 <script>
 import { ref, onMounted, watch } from 'vue';
 import axios from 'axios';
-import Icon from 'vue-awesome/components/Icon.vue';
 
 export default {
     props: {
@@ -48,9 +44,6 @@ export default {
             type: String,
             required: true
         }
-    },
-    components: {
-        Icon
     },
     setup(props) {
         const accessToken = ref(null);
@@ -140,22 +133,6 @@ export default {
             }
         };
 
-        const addToLikes = (track) => {
-            const episode = {
-                title: props.episodeName,
-                author: props.author,
-                track: track
-            };
-            let likedEpisodes = JSON.parse(localStorage.getItem('likedEpisodes')) || [];
-            if (!likedEpisodes.some(e => e.track.id === track.id)) {
-                likedEpisodes.push(episode);
-                localStorage.setItem('likedEpisodes', JSON.stringify(likedEpisodes));
-                alert(`${episode.title} añadido a tus episodios favoritos`);
-            } else {
-                alert(`${episode.title} ya está en tus episodios favoritos`);
-            }
-        };
-
         onMounted(async () => {
             await authenticate();
             await searchTracks(props.query);
@@ -169,13 +146,11 @@ export default {
             updateProgress,
             seek,
             nextTrack,
-            prevTrack,
-            addToLikes
+            prevTrack
         };
     }
 };
 </script>
-
 <style scoped>
 .music-player {
     display: flex;
@@ -210,12 +185,6 @@ export default {
     border-radius: 20px;
 }
 
-.icones {
-    display: flex;
-    margin-top: 20px;
-    gap: 20px;
-}
-
 .progress-bar {
     position: relative;
     width: 50%;
@@ -246,8 +215,10 @@ export default {
 @media (min-width: 2560px) {
     .rep {
         max-width: 1500px;
+        
     }
 }
+
 
 @media (min-width: 1024px) {
     .rep {
@@ -264,8 +235,10 @@ export default {
     }
 }
 
+
 @media (min-width: 768px) {
     .rep {
+        
         max-width: 500px;
     }
 
@@ -279,6 +252,7 @@ export default {
     }
 }
 
+
 @media (max-width: 767px) {
     .rep {
         width: 90%;
@@ -291,6 +265,7 @@ export default {
         width: 120px;
         height: 120px;
         border-radius: 50%;
+        
     }
 
     .progress-bar {
@@ -312,5 +287,6 @@ export default {
         width: 100%;
         margin-bottom: 20px;
     }
+
 }
 </style>
