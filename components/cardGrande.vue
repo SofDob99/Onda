@@ -10,12 +10,15 @@
                 <h2>Carlos Alsina.</h2>
                 <p>Las mañanas de OndaCero</p>
             </div>
-            <button class="oval-button"  @click="addTofollow('Carlos Alsina')">Seguir</button>
-            <nuxt-link to="/masqueuno">
-                <button class="arrow-button">
-                    <Icon name="ic:baseline-arrow-forward" color="white" size="2em"></Icon>
-                </button>
-            </nuxt-link>
+            <div class="botonesresponsive"> 
+                <button class="oval-button" @click="addTofollow('Carlos Alsina')">Seguir</button>
+                <nuxt-link to="/masqueuno">
+                    <button class="arrow-button">
+                        <Icon name="ic:baseline-arrow-forward" color="white" size="2em"></Icon>
+                    </button>
+                </nuxt-link>
+            </div>
+
         </div>
     </div>
 </template>
@@ -107,7 +110,8 @@ p {
     align-items: center;
 }
 
-.oval-button, .arrow-button {
+.oval-button,
+.arrow-button {
     margin-top: 1rem;
     border: none;
     border-radius: 20px;
@@ -120,7 +124,8 @@ p {
     padding: 0.5rem 1rem;
 }
 
-.oval-button:hover, .arrow-button:hover {
+.oval-button:hover,
+.arrow-button:hover {
     background-color: #1A1B37;
 }
 
@@ -227,6 +232,13 @@ p {
     p {
         font-size: 16px;
     }
+    .botonesresponsive {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        margin-bottom: 10px;
+
+    }
 
     .oval-button {
         margin-top: 1rem;
@@ -252,8 +264,6 @@ p {
     .text {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
     }
 
     h1 {
@@ -273,7 +283,13 @@ p {
     p {
         font-size: 14px;
     }
+    .botonesresponsive {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        margin-bottom: 10px;
 
+    }
     .oval-button {
         margin-top: 0.5rem;
         padding: 0.3rem 0.6rem;

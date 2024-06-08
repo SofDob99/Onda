@@ -73,4 +73,13 @@ button {
     border: 4px solid rgba(0, 0, 0, 0.00);
     background: #71b84e;
 }
+
+@media (max-width: 576px) {
+    .login-container {
+        width: 300px;
+    height: 51px;
+
+    }
+}
+
 </style>

@@ -64,4 +64,12 @@ const addTofollow = (seguir) => {
     gap: 20px;
     align-items: center;
 }
+
+@media screen and (min-width: 425px) {
+    .cardafter {
+        margin-left: 10px;
+        width: calc(90% - 10px);
+        
+    }
+}
 </style>

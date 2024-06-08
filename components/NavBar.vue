@@ -32,11 +32,11 @@
         </button>
     </nav>
     <div v-if="isMobileMenuVisible" class="mobile-menu">
-        <NuxtLink to="/home" @click="toggleMobileMenu">Home</NuxtLink>
+        <NuxtLink to="/" @click="toggleMobileMenu">Home</NuxtLink>
         <NuxtLink to="/favs" @click="toggleMobileMenu">Favoritos</NuxtLink>
         <NuxtLink to="/buscador" @click="toggleMobileMenu">Buscador</NuxtLink>
         <NuxtLink to="/seguidores" @click="toggleMobileMenu">Seguidores</NuxtLink>
-        <NuxtLink to="/perfil" @click="toggleMobileMenu">Perfil</NuxtLink>
+        <NuxtLink to="/login" @click="toggleMobileMenu">Perfil</NuxtLink>
     </div>
 </template>
 
