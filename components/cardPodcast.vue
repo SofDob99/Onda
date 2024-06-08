@@ -64,11 +64,27 @@ const addTofollow = (seguir) => {
     gap: 20px;
     align-items: center;
 }
-
-@media screen and (min-width: 375px) {
+@media screen and (max-width: 768px) {
     .cardafter {
-        margin-left: 10px;
+        margin-left: 20px;
+        width: calc(90% - 10px);
+        
+    }
+}
+@media screen and (max-width: 475px) {
+    .cardafter {
+        margin-left: 5px;
+        width: calc(90% - 10px);
+        
+    }
+}
+@media screen and (max-width: 375px) {
+    .cardafter {
+        margin-left: 5px;
         width: calc(90% - 15px);
+    .text-4xl {
+        font-size: 24px;
+    }
         
     }
 }
