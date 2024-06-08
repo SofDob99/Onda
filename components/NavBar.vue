@@ -16,7 +16,7 @@
             <nuxt-link to="/seguidores">
                 <button class="oval-button">Siguiendo</button>
             </nuxt-link>
-            <nuxt-link to="/users">
+            <nuxt-link to="/usuarios">
                 <img class="img-perfil" src="/perfil.jpeg" alt="">
             </nuxt-link>
         </div>

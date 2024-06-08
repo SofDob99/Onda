@@ -1,7 +1,7 @@
 <template>
     <div class="music-player" v-if="currentTrack">
         <audio ref="audio" :src="currentTrack?.preview_url || ''" @timeupdate="updateProgress" @ended="nextTrack"></audio>
-        <div class="info" data-aos="flip-left">
+        <div class="info" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
             <img :src="coverImage" alt="Cover Image" class="cover-image" />
             <h1 class="text-4xl">{{ episodeName }}</h1>
             <h2 data-aos="flip-left">{{ author }}</h2>

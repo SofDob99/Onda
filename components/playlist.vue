@@ -28,7 +28,14 @@ const episodes = ref([
     { title: '1x1: Gasolina, coches de choque y la -Adele de feria-', },
     { title: '1x2: Historias Invisibles: Relatos de lo Cotidiano' },
     { title: '1x3: Exploradores del Conocimiento: Más Allá de la Curiosidad' },
-    // Añade más episodios aquí
+    { title: '1x4: Café y Charlas: Conversaciones Inspiradoras' },
+    { title: '1x5: Historias de Sofá: Relatos para Reflexionar' },
+    { title: '1x6: Voces del Pasado: Testimonios y Recuerdos' },
+    { title: '1x7: Caminos del Conocimiento: Senderos del Saber' },
+    { title: '1x8: Diseños calcomanicos' },
+    { title: '1x9: Mentes Creativas: Entrevistas con Artistas y Creadores' },
+    { title: '1x10: Corea y el arte de la música' },
+    
 ]);
 
 const addToLikes = (episode) => {

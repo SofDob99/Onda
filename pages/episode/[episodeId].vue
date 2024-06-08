@@ -29,13 +29,13 @@ export default {
                 'Gasolina, coches de choque y la -Adele de feria-',
                 'Historias Invisibles: Relatos de lo Cotidiano',
                 'Exploradores del Conocimiento: Más Allá de la Curiosidad',
-                'Innovación en Marcha: Charlas con Pioneros',
-                'Voces del Futuro: Tendencias y Visiones',
-                'Caminos del Alma: Reflexiones y Encuentros',
-                'Rincones del Mundo: Viajes y Aventuras',
-                'La Ciencia Detrás de Todo: Descubrimientos y Misterios',
+                'Café y Charlas: Conversaciones Inspiradoras',
+                'Historias de Sofá: Relatos para Reflexionar',
+                'Voces del Pasado: Testimonios y Recuerdos',
+                'Caminos del Conocimiento: Senderos del Saber',
+                'Diseños calcomanicos',
                 'Mentes Creativas: Entrevistas con Artistas y Creadores',
-                'En la Cocina con: Secretos y Recetas',
+                'Corea y el arte de la música',
             ];
         }
     }

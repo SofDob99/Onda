@@ -1,7 +1,7 @@
 <template>
     <div class="liked-episodes">
         <h1 class="text-5xl">Episodios que te gustan</h1>
-        <div v-if="likedEpisodes.length">
+        <div v-if="likedEpisodes.length" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
             <ul class="mg">
                 <li v-for="(episode, index) in likedEpisodes" :key="index">
                     <div class="episode-info">

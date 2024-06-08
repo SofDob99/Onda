@@ -5,7 +5,7 @@
             <ul class="mg">
                 <li v-for="(seguir, index) in following" :key="index" class="follow-item">
                     <img src="/after.png" alt="podcast image" class="follow-image" />
-                    <h1>{{ seguir }}</h1>
+                    <h1 text-3xl>{{ seguir }}</h1>
                 </li>
             </ul>
         </div>
