@@ -1,5 +1,6 @@
 <template>
     <div class="login-container">
+        <h1 class="text-3xl">Inicia Sesión</h1>
         <MazInput v-model="username" label="Username" :disabled="isLoading" />
         <MazInput v-model="password" label="Password" type="password" :disabled="isLoading" />
         <button @click="handleLogin" :disabled="isLoading">
@@ -53,21 +54,23 @@ const handleLogin = async () => {
 
 <style scoped>
 .login-container {
+    margin-top: 100px;
+    margin-left: 40px;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+    width: 600px;
+    height: 51px;
+    border: 4px solid rgba(0, 0, 0, 0.00);
     gap: 1rem;
 }
 
 button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    background-color: blue;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
+    width: 162px;
+    height: 51px;
+    flex-shrink: 0;
+    border-radius: 43.5px;
+    border: 4px solid rgba(0, 0, 0, 0.00);
+    background: #71b84e;
 }
 </style>
