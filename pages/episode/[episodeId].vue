@@ -1,6 +1,5 @@
 <template>
     <div>
-        <h1>{{ $route.params.id }}</h1>
         <MusicPlayer :query="episodeQuery" :episodeName="episodeName" :author="author" :coverImage="coverImage" />
     </div>
 </template>
@@ -14,35 +13,31 @@ export default {
     },
     computed: {
         episodeQuery() {
-            return `episode ${this.$route.params.id}`; // Ajusta esto según tu lógica de búsqueda
+            return `episode ${this.$route.params.episodeId}`;
         },
         episodeName() {
-            return `Episode ${this.$route.params.id}: ${this.episodes[this.$route.params.id - 1]}`;
+            return `Episode ${this.$route.params.episodeId}: ${this.episodes[this.$route.params.episodeId - 1]}`;
         },
         author() {
-            return 'Gema Ruiz'; // Ajusta esto según tu lógica
+            return 'Gema Ruiz';
         },
         coverImage() {
-            return `https://picsum.photos/300?random=${this.$route.params.id}`; // Imagen aleatoria basada en el ID del episodio
+            return `https://picsum.photos/300?random=${this.$route.params.episodeId}`;
         },
         episodes() {
             return [
                 'Gasolina, coches de choque y la -Adele de feria-',
-                'Segundo episodio',
-                'Tercer episodio',
-                'Cuarto episodio',
-                'Quinto episodio',
-                'Sexto episodio',
-                'Séptimo episodio',
-                'Octavo episodio',
-                'Noveno episodio',
-                'Décimo episodio',
+                'Historias Invisibles: Relatos de lo Cotidiano',
+                'Exploradores del Conocimiento: Más Allá de la Curiosidad',
+                'Innovación en Marcha: Charlas con Pioneros',
+                'Voces del Futuro: Tendencias y Visiones',
+                'Caminos del Alma: Reflexiones y Encuentros',
+                'Rincones del Mundo: Viajes y Aventuras',
+                'La Ciencia Detrás de Todo: Descubrimientos y Misterios',
+                'Mentes Creativas: Entrevistas con Artistas y Creadores',
+                'En la Cocina con: Secretos y Recetas',
             ];
         }
     }
 };
 </script>
-
-<style scoped>
-
-</style>

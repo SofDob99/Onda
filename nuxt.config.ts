@@ -19,5 +19,6 @@ export default defineNuxtConfig({
         ital: [100]
       },
     }
-  }
+  },
+
 });

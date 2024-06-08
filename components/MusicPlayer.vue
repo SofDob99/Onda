@@ -2,23 +2,22 @@
     <div class="music-player" v-if="currentTrack">
         <audio ref="audio" :src="currentTrack?.preview_url || ''" @timeupdate="updateProgress"
             @ended="nextTrack"></audio>
-        <div class="info">
+        <div class="info" data-aos="flip-left">
             <img :src="coverImage" alt="Cover Image" class="cover-image" />
-            <h1>{{ episodeName }}</h1>
-            <h2>{{ author }}</h2>
-            <h3>{{ currentTrack?.name || '' }}</h3>
-            <p>{{ currentTrack?.artists[0]?.name || '' }}</p>
+            <h1 class="text-4xl">{{ episodeName }}</h1>
+            <h2 data-aos="flip-left">{{ author }}</h2>
+            <!--<h3 data-aos="flip-left">{{ currentTrack?.name || '' }}</h3>-->
+            <p data-aos="flip-left">{{ currentTrack?.artists[0]?.name || '' }}</p>
         </div>
         <div class="rep">
             <div class="progress-bar" @click="seek($event)">
-            <div class="progress" :style="{ width: progress + '%' }"></div>
-        </div>
-        <div class="controls">
-            <button @click="prevTrack"><Icon name="ic:baseline-arrow-left" color="white" size="2em"></Icon></button>
-            <button @click="togglePlay">{{ isPlaying ? 'Pausa' : 'Play' }}</button>
-            <button @click="nextTrack"><Icon name="ic:baseline-arrow-right" color="white" size="2em"></Icon></button>
-        </div>
-
+                <div class="progress" :style="{ width: progress + '%' }"></div>
+            </div>
+            <div class="controls">
+                <button @click="prevTrack">Anterior</button>
+                <button @click="togglePlay">{{ isPlaying ? 'Pausa' : 'Play' }}</button>
+                <button @click="nextTrack">Siguiente</button>
+            </div>
         </div>
     </div>
 </template>
@@ -152,36 +151,45 @@ export default {
     }
 };
 </script>
-
-
 <style scoped>
-
-.music-player{
-    margin: 30px;
+.music-player {
     display: flex;
     flex-direction: column;
-    gap:20px;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px;
 }
 
-.rep{
+.rep {
     display: flex;
     flex-direction: column;
-    align-content: stretch;
     align-items: center;
-    border-radius: 84.53px 84.53px 84px 84.53px;
+    width: 1000px;
     background: #71b84e88;
-    box-shadow: 0px 4px 35px 14px rgba(113, 184, 78, 0.50);
+    border-radius: 84.53px 84.53px 84px;
+    box-shadow: 0 4px 35px 14px #71b84e80;
 }
 
 .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     margin-bottom: 10px;
+}
+
+.cover-image {
+    width: 200px;
+    height: auto;
+    border-radius: 20px;
 }
 
 .progress-bar {
     position: relative;
-    margin-top: 30px;
     width: 50%;
     height: 10px;
+    margin-top: 30px;
     background: #ffffff;
     cursor: pointer;
     border-radius: 84.53px 84.53px 84px 84.53px;
@@ -200,7 +208,83 @@ export default {
 .controls {
     display: flex;
     justify-content: space-between;
-    gap:90px;  
-    margin-bottom: 30px; 
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+@media (min-width: 2560px) {
+    .rep {
+        max-width: 1500px;
+        
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .rep {
+        max-width: 1000px;
+    }
+
+    .cover-image {
+        width: 180px;
+        height: 180px;
+    }
+
+    .progress-bar {
+        width: 60%;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .rep {
+        margin: 30px;
+        max-width: 500px;
+    }
+
+    .cover-image {
+        width: 160px;
+        height: 160px;
+    }
+
+    .progress-bar {
+        width: 50%;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .rep {
+        width: 90%;
+        background: #71b84e88;
+        border-radius: 84.53px;
+        box-shadow: 0 4px 35px 14px #71b84e80;
+        padding: 20px;
+    }
+
+    .cover-image {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        
+    }
+
+    .progress-bar {
+        width: 90%;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        border-radius: 50px;
+    }
+
+    .progress {
+        border-radius: 50px;
+    }
+
+    .controls {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+    }
+
 }
 </style>

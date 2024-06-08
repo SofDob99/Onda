@@ -27,15 +27,15 @@ const title = ref('After Hours');
 const subtitle = ref('Gema Ruiz');
 const episodes = ref([
     '1x1: Gasolina, coches de choque y la -Adele de feria-',
-    '1x2: Segundo episodio',
-    '1x3: Tercer episodio',
-    '1x4: Cuarto episodio',
-    '1x5: Quinto episodio',
-    '1x6: Sexto episodio',
-    '1x7: Séptimo episodio',
-    '1x8: Octavo episodio',
-    '1x9: Noveno episodio',
-    '1x10: Décimo episodio',
+    '1x2: Historias Invisibles: Relatos de lo Cotidiano',
+    '1x3: Exploradores del Conocimiento: Más Allá de la Curiosidad',
+    '1x4: Innovación en Marcha: Charlas con Pioneros',
+    '1x5: Voces del Futuro: Tendencias y Visiones',
+    '1x6: Caminos del Alma: Reflexiones y Encuentros',
+    '1x7: Rincones del Mundo: Viajes y Aventuras',
+    '1x8: La Ciencia Detrás de Todo: Descubrimientos y Misterios',
+    '1x9: Mentes Creativas: Entrevistas con Artistas y Creadores',
+    '1x10: En la Cocina con: Secretos y Recetas',
 ]);
 
 const addToLikes = (episode) => {
